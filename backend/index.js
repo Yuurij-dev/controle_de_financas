@@ -117,6 +117,7 @@ app.post("/login", (req, res) =>{
         if(err) return res.status(500).json(err)
 
         if(data.length > 0){
+            console.error("Erro no banco:", err);
             return res.json({message: "Usuario logado com sucesso"})
         }else{
             return res.status(401).json({message: "Usuario ou senha incorretos!"})
