@@ -30,7 +30,7 @@ function Transacoes() {
 
   const handleClick = async (id) => {
     try{
-      await axios.delete("http://localhost:3333/controle/"+id)
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/controle/`+id)
       setTransacoes(prev => prev.filter(item => item.id !== id))
       window.location.reload()
     } catch(err){
