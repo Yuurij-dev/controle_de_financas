@@ -10,11 +10,12 @@ app.use(express.json())
 app.use(cors())
 
 const db = mysql.createPool({
-    connectionLimit: 10,  // quantidade de conexões no pool
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    connectionLimit: 10,
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT || 3306,
 });
 
 // Mostrar Valores
