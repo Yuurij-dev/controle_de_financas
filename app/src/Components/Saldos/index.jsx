@@ -3,7 +3,7 @@ import './styles.css'
 import { useState } from 'react'
 
 function Saldo({valor}) {
-  const valorFormated = valor.toLocaleString('pt-br',{
+  const valorFormated = valor.toLocaleString('pt-BR',{
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
@@ -19,7 +19,7 @@ function Saldo({valor}) {
 }
 
 function Receitas({valor}) {
-  const valorFormated = valor.toLocaleString('pt-br',{
+  const valorFormated = valor.toLocaleString('pt-BR',{
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
@@ -35,7 +35,7 @@ function Receitas({valor}) {
 }
 
 function Despesa({valor}) {
-  const valorFormated = valor.toLocaleString('pt-br',{
+  const valorFormated = valor.toLocaleString('pt-BR',{
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
