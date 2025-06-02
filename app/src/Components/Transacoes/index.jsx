@@ -12,7 +12,7 @@ function Transacoes() {
   useEffect(() => {
     const getTransacoes = async () => {
       try{
-        const res = await axios.get(`${process.env.VITE_BACKEND_URL}/controle`)
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/controle`)
   
         
         if(res.data.length === 0){

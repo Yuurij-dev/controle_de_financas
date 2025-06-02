@@ -67,7 +67,7 @@ function PageDespesa() {
         if(despesa.valor !== null && despesa.data !== '' && despesa.descricao !== ''){
             if(despesa.valor != 0){
                 try{
-                    await axios.post(`${process.env.VITE_BACKEND_URL}/despesa`, despesa)
+                    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/despesa`, despesa)
                     window.location.reload()
                 }catch(err){
                     console.log(err)

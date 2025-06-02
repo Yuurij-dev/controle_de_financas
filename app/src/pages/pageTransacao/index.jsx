@@ -64,7 +64,7 @@ function PageTransacao() {
         if(receita.valor !== null && receita.data !== '' && receita.descricao !== ''){
            if(receita.valor != 0){
             try{
-                await axios.post(`${process.env.VITE_BACKEND_URL}/receita`, receita)
+                await axios.post(`${import.meta.env.VITE_BACKEND_URL}/receita`, receita)
                 window.location.reload()
             } catch(err){
                 console.log(err)
