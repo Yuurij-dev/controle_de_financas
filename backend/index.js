@@ -107,23 +107,25 @@ app.delete('/controle/:id', (req, res) => {
 
 
 // Verificar Login
-app.post("/login", (req, res) =>{
-    const q = "SELECT * FROM users WHERE username = ? AND pass = ?"
+app.post("/login", (req, res) => {
+    const q = "SELECT * FROM users WHERE username = ? AND pass = ?";
     const values = [
         req.body.username,
         req.body.pass
-    ]
+    ];
     db.query(q, values, (err, data) => {
-        if(err) return res.status(500).json(err)
+        if(err) {
+            console.error("Erro no banco:", err);
+            return res.status(500).json({ message: "Erro no banco de dados", error: err.message });
+        }
 
         if(data.length > 0){
-            console.error("Erro no banco:", err);
-            return res.json({message: "Usuario logado com sucesso"})
+            return res.json({message: "Usuario logado com sucesso"});
         }else{
-            return res.status(401).json({message: "Usuario ou senha incorretos!"})
+            return res.status(401).json({message: "Usuario ou senha incorretos!"});
         }
-    })
-})
+    });
+});
 
 app.listen(3333, () => {
     console.log("conectado no backend")
