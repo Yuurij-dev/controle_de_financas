@@ -1,0 +1,57 @@
+.container{
+    padding: 10px;
+}
+.sem-acesso{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sem-acesso-content{
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);  
+    text-align: center;
+}
+.sem-acesso h1{
+    color: rgb(230, 50, 50);
+    font-weight: bold;
+}
+.sem-acesso button{
+    padding: 10px;
+    border-radius: 10px;
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.sem-acesso button:hover{
+    background-color: #313033;
+}
+
+.sair{
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .3s ease all;
+    cursor: pointer;
+    background-color: #212023;
+    color: #fff;
+    font-weight: bold;
+}
+.sair:hover{
+    background-color: #313033;
+}

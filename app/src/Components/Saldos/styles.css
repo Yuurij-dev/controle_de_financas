@@ -1,0 +1,22 @@
+.card{
+    padding: 30px;
+    min-height: 120px;
+
+    box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+
+    border-radius: 10px;
+    /* border: 1px solid rgba(226, 226, 226, 0.75); */
+
+    background-color: #212023;
+}
+
+.card h3{
+    color: #fff;
+    font-size: 14px;
+}
+.card span{
+    font-size: 25px;
+    font-weight: 500;
+}

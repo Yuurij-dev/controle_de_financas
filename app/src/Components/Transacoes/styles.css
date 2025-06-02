@@ -1,0 +1,59 @@
+.transacoes{
+    box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(184,184,184,0.75);
+
+    border-radius: 10px;
+    padding: 30px;
+
+}
+
+.transacoes p {
+    color: #737373;
+    font-size: 14px;
+}
+
+#transacoes{
+    margin: 50px 0;
+    color: #737373;
+}
+
+#transacoes .transacao{
+    padding: 20px;
+    border-radius: 10px;
+    /* background-color: #212023; */
+}
+#transacoes .transacao h1{
+    font-size: 16px;
+    font-weight: bold;
+    /* color: #fff; */
+}
+
+#transacoes .receita{
+    border: 1.5px solid #11e96b;
+}
+#transacoes .despesa{
+    border: 1.5px solid #ff808a; 
+}
+#transacoes .despesa .valor{
+    color: #bd565f;
+}
+#transacoes .receita .valor{
+    color: #0bb652;
+}
+
+@media screen and (max-width: 600px){
+    #transacoes .transacao{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    } 
+    #transacoes .transacao .transacao-div-1{
+        width: auto;
+    } 
+    #transacoes .transacao .transacao-div-2{
+        flex-direction: column;
+        gap: 5px;
+    }
+}

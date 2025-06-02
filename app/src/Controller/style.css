@@ -1,0 +1,24 @@
+.container-card{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 900px){
+    .container-card{
+        grid-template-columns: 1fr 1fr;
+        align-content: center;
+    }
+    .container-card .card-last{
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container-card{
+        grid-template-columns: 1fr;
+    }
+
+    .container-card .card-last{
+        grid-column: auto;
+    }
+}
+
