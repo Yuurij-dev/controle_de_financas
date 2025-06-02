@@ -7,6 +7,8 @@ function Saldo({valor}) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
+  valorFormated.replace(',', '.');
+
   return (
     <div className='card'>
         <h3>Saldo Total</h3>
@@ -23,6 +25,7 @@ function Receitas({valor}) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
+  valorFormated.replace(',', '.');
   return (
     <div className='card'>
         <h3>Receitas</h3>
@@ -39,6 +42,8 @@ function Despesa({valor}) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })
+  valorFormated.replace(',', '.');
+
   return (
     <div className='card card-last'>
         <h3>Despesas</h3>
