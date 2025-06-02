@@ -9,12 +9,13 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
+    connectionLimit: 10,  // quantidade de conexões no pool
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
-})
+});
 
 // Mostrar Valores
 app.get("/controle", (req,res) => {   
