@@ -15,7 +15,7 @@ function Controle() {
   useEffect(() => {
     const getValues = async () => {
       try{
-        const res = await axios.get("http://localhost:3333/transacoes")
+        const res = await axios.get(`${process.env.VITE_BACKEND_URL}/transacoes`)
 
         const saldo = res.data.saldo_total
         const receitas = res.data.total_receitas

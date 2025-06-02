@@ -27,7 +27,7 @@ function Login() {
         e.preventDefault()
         if(login.username !== '' && login.pass !== '') {
             try{
-                await axios.post("http://localhost:3333/login", login)
+                await axios.post(`${process.env.VITE_BACKEND_URL}/login`, login)
                 localStorage.setItem("loggedIn", "true")
                 navigate('/dashboard')
             }catch(err){

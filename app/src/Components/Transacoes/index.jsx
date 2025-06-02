@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+
 // Terminar de consertar os valores iniciais
 function Transacoes() {
   const [transacoes, setTransacoes] = useState([])
@@ -11,7 +12,7 @@ function Transacoes() {
   useEffect(() => {
     const getTransacoes = async () => {
       try{
-        const res = await axios.get("http://localhost:3333/controle")
+        const res = await axios.get(`${process.env.VITE_BACKEND_URL}/controle`)
   
         
         if(res.data.length === 0){
