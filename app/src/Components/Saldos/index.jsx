@@ -2,18 +2,28 @@ import './styles.css'
 
 import { useState } from 'react'
 
-function Saldo({valor}) {
-  const valorFormated = valor.toLocaleString('pt-br',{
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  })
+function Saldo({ valor }) {
+  function formatBRL(value) {
+    return value.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
+  // Tenta usar toLocaleString, se não funcionar (por segurança) usa o fallback
+  let valorFormated;
+  try {
+    valorFormated = valor.toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  } catch {
+    valorFormated = formatBRL(valor);
+  }
+
   return (
     <div className='card'>
-        <h3>Saldo Total</h3>
-        
-        <div className='flex gap-2 items-center'>
-          <span className={valor < 0 ? 'text-red-500' : 'text-green-500'}>R$ {valorFormated}</span>
-        </div>
+      <h3>Saldo Total</h3>
+      <div className='flex gap-2 items-center'>
+        <span className={valor < 0 ? 'text-red-500' : 'text-green-500'}>R$ {valorFormated}</span>
+      </div>
     </div>
   )
 }
