@@ -1,7 +1,7 @@
 import './styles.css'
 import Select from 'react-select';
 import { NumericFormat } from 'react-number-format';
-
+import ReactLoading from 'react-loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,6 +10,7 @@ import { useState } from 'react';
 import axios from 'axios'
 
 function PageTransacao() {
+    cons [isLoading, setIsLoading] = useState(false)
     const [receita, setReceita] = useState({
         tipo: 'receita',
         descricao: '',
@@ -64,11 +65,14 @@ function PageTransacao() {
         if(receita.valor !== null && receita.data !== '' && receita.descricao !== ''){
            if(receita.valor != 0){
             try{
+                setIsLoading(true)
                 await axios.post(`${import.meta.env.VITE_BACKEND_URL}/receita`, receita)
                 window.location.reload()
             } catch(err){
                 console.log(err)
-            }   
+            }finally{
+                setIsLoading(false)
+            }
            }else{
             console.log("A receita deve ser maior que 0")
            }
@@ -137,7 +141,11 @@ function PageTransacao() {
                     <label>Data</label>
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
-                <button onClick={handleReceita} className='submit-button bg-gray-300'>Enviar</button>
+                {isLoading ? (
+                    <button className='submit-button bg-gray-300 '><ReactLoading type="spin" color="#000" height={30} width={30} /></button>
+                ): (    
+                    <button onClick={handleReceita} className='submit-button bg-gray-300 '>Enviar</button>
+                )}
             </form>
         </div>
     </div>

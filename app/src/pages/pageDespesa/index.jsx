@@ -1,13 +1,14 @@
 import './styles.css'
 import Select from 'react-select';
 import { NumericFormat } from 'react-number-format';
-
+import ReactLoading from 'react-loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import axios from 'axios';
 
 function PageDespesa() {
+    const [isLoading, setLoading] = useState(false)
     const [despesa, setDespesa] = useState({
         tipo: 'despesa',
         descricao: '',
@@ -67,10 +68,13 @@ function PageDespesa() {
         if(despesa.valor !== null && despesa.data !== '' && despesa.descricao !== ''){
             if(despesa.valor != 0){
                 try{
+                    setLoading(true)
                     await axios.post(`${import.meta.env.VITE_BACKEND_URL}/despesa`, despesa)
                     window.location.reload()
                 }catch(err){
                     console.log(err)
+                }finally {
+                    setLoading(false)
                 }
             }else{
                 console.log("A despesa deve ser maior que 0")
@@ -133,8 +137,12 @@ function PageDespesa() {
                     <label>Data</label>
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
-
-                <button onClick={handleDespesa} className='submit-button bg-gray-300 '>Enviar</button>
+                {isLoading ? (
+                    <button className='submit-button bg-gray-300 '><ReactLoading type="spin" color="#000" height={30} width={30} /></button>
+                ): (    
+                    <button onClick={handleDespesa} className='submit-button bg-gray-300 '>Enviar</button>
+                )}
+                
             </form>
         </div>
     </div>
