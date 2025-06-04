@@ -75,3 +75,14 @@ form option{
 .remove button{
     cursor: pointer;
 }
+
+.submit-button{
+    color: #fff;
+    background-color: #212023;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.submit-button:hover{
+    background-color: #404041;
+}

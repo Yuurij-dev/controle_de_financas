@@ -134,7 +134,7 @@ function PageDespesa() {
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
 
-                <button onClick={handleDespesa} className='bg-gray-300'>Enviar</button>
+                <button onClick={handleDespesa} className='submit-button bg-gray-300 '>Enviar</button>
             </form>
         </div>
     </div>

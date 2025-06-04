@@ -137,7 +137,7 @@ function PageTransacao() {
                     <label>Data</label>
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
-                <button onClick={handleReceita} className='bg-gray-300'>Enviar</button>
+                <button onClick={handleReceita} className='submit-button bg-gray-300'>Enviar</button>
             </form>
         </div>
     </div>
