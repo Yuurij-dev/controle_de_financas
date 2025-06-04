@@ -85,3 +85,44 @@ form option{
 .submit-button:hover{
     background-color: #404041;
 }
+
+.loading {
+    background-color: #212023;
+    padding: 10px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading div{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-sizing: 0 -0.4rem rgba(60,0,80,0.1) inset;
+    animation: cycle 1s ease-in-out infinite;
+}
+.loading div:nth-child(1){
+    animation-delay: 0;
+}
+.loading div:nth-child(2){
+    animation-delay: 0.2s;
+}
+.loading div:nth-child(1){
+    animation-delay: 0.4s;
+}
+
+@keyframes cycle{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(1rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

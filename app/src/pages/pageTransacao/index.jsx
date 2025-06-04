@@ -9,7 +9,7 @@ import { useState } from 'react';
 import axios from 'axios'
 
 function PageTransacao() {
-    cons [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const [receita, setReceita] = useState({
         tipo: 'receita',
         descricao: '',
@@ -141,7 +141,11 @@ function PageTransacao() {
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
                 {isLoading ? (
-                    <button className='submit-button bg-gray-300 '>carregando...</button>
+                    <div className="loading">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 ): (    
                     <button onClick={handleReceita} className='submit-button bg-gray-300 '>Enviar</button>
                 )}

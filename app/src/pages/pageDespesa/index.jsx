@@ -137,7 +137,11 @@ function PageDespesa() {
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
                 {isLoading ? (
-                    <button className='submit-button bg-gray-300 '>carregando...</button>
+                    <div className="loading">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 ): (    
                     <button onClick={handleDespesa} className='submit-button bg-gray-300 '>Enviar</button>
                 )}
