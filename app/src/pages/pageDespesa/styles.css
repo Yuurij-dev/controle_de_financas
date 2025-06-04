@@ -86,6 +86,17 @@ form option{
 .submit-button:hover{
     background-color: #404041;
 }
+
+.loading {
+    height: 40px;
+    background-color: #212023;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
 .loading div{
     width: 10px;
     height: 10px;

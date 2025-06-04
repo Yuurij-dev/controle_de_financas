@@ -145,7 +145,6 @@ function PageDespesa() {
                 ): (    
                     <button onClick={handleDespesa} className='submit-button bg-gray-300 '>Enviar</button>
                 )}
-                
             </form>
         </div>
     </div>
