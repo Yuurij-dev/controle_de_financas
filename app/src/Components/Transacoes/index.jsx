@@ -59,7 +59,14 @@ function Transacoes() {
                     </div>
 
                     <div className='flex items-center gap-6 transacao-div-2'>
-                      <span className='valor text-[20px] font-bold'>{item.tipo === "receita" ? "+" : "-"}{item.valor.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                      <span className='valor text-[20px] font-bold'>{item.tipo === "receita" ? "+" : "-"}
+                        {
+                          new Intl.NumberFormat('pt-BR', {
+                          style: 'currency',
+                          currency: 'BRL',
+                        }).format(item.valor)
+                        }
+                      </span>
                       <button onClick={() => handleClick(item.id)}><FontAwesomeIcon icon={faTrash} style={{ color: '#cbcbcb', cursor: 'pointer' }} /></button>
                     </div>
                   </div>
