@@ -1,7 +1,6 @@
 import './styles.css'
 import Select from 'react-select';
 import { NumericFormat } from 'react-number-format';
-import ReactLoading from 'react-loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -142,7 +141,7 @@ function PageTransacao() {
                     <input type="date" onChange={handleData} defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
                 {isLoading ? (
-                    <button className='submit-button bg-gray-300 '><ReactLoading type="spin" color="#000" height={30} width={30} /></button>
+                    <button className='submit-button bg-gray-300 '>carregando...</button>
                 ): (    
                     <button onClick={handleReceita} className='submit-button bg-gray-300 '>Enviar</button>
                 )}
